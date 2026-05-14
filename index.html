@@ -1,371 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<!-- LOGO CHANGE -->
 
-<title>Sneha Beauty Studio & Academy</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-
-body{
-    background:#000;
-    color:#fff;
-    overflow-x:hidden;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-/* NAVBAR */
-
-nav{
-    width:100%;
-    padding:18px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    position:fixed;
-    top:0;
-    z-index:999;
-    background:rgba(0,0,0,0.85);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid rgba(255,215,0,0.2);
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
-.logo img{
-    width:65px;
-    height:65px;
-    border-radius:50%;
-    border:2px solid gold;
-    object-fit:cover;
-}
-
-.logo h2{
-    color:gold;
-    font-size:24px;
-}
-
-nav ul{
-    display:flex;
-    gap:25px;
-    list-style:none;
-}
-
-nav ul li a{
-    color:white;
-    text-decoration:none;
-    transition:0.3s;
-    font-weight:500;
-}
-
-nav ul li a:hover{
-    color:gold;
-}
-
-/* HERO */
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:120px 8% 60px;
-    background:
-    linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.85)),
-    url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=1600&auto=format&fit=crop') center/cover;
-}
-
-.hero-content{
-    max-width:700px;
-}
-
-.hero-content h1{
-    font-size:68px;
-    line-height:1.1;
-    color:gold;
-    margin-bottom:20px;
-}
-
-.hero-content p{
-    font-size:18px;
-    color:#ddd;
-    line-height:1.8;
-    margin-bottom:30px;
-}
-
-.hero-btns{
-    display:flex;
-    gap:20px;
-    flex-wrap:wrap;
-}
-
-.btn{
-    padding:15px 35px;
-    border:none;
-    border-radius:40px;
-    font-size:16px;
-    font-weight:600;
-    cursor:pointer;
-    transition:0.4s;
-    text-decoration:none;
-}
-
-.btn-gold{
-    background:gold;
-    color:black;
-}
-
-.btn-gold:hover{
-    background:white;
-    transform:translateY(-5px);
-}
-
-.btn-outline{
-    border:2px solid gold;
-    color:gold;
-}
-
-.btn-outline:hover{
-    background:gold;
-    color:black;
-}
-
-/* SERVICES */
-
-section{
-    padding:90px 8%;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:60px;
-}
-
-.section-title h2{
-    font-size:45px;
-    color:gold;
-    margin-bottom:15px;
-}
-
-.section-title p{
-    color:#ccc;
-}
-
-.services{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
-}
-
-.service-box{
-    background:#111;
-    padding:35px;
-    border-radius:25px;
-    transition:0.4s;
-    border:1px solid rgba(255,215,0,0.2);
-}
-
-.service-box:hover{
-    transform:translateY(-10px);
-    box-shadow:0 0 25px rgba(255,215,0,0.3);
-}
-
-.service-box h3{
-    color:gold;
-    margin-bottom:15px;
-    font-size:24px;
-}
-
-.service-box p{
-    color:#ddd;
-    line-height:1.7;
-}
-
-/* GALLERY */
-
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
-
-.gallery img{
-    width:100%;
-    height:380px;
-    object-fit:cover;
-    border-radius:25px;
-    transition:0.4s;
-    border:2px solid rgba(255,215,0,0.2);
-}
-
-.gallery img:hover{
-    transform:scale(1.03);
-    box-shadow:0 0 30px rgba(255,215,0,0.4);
-}
-
-/* ABOUT */
-
-.about{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    align-items:center;
-    gap:50px;
-}
-
-.about img{
-    width:100%;
-    border-radius:30px;
-    border:3px solid gold;
-}
-
-.about-content h2{
-    font-size:45px;
-    color:gold;
-    margin-bottom:20px;
-}
-
-.about-content p{
-    line-height:1.9;
-    color:#ddd;
-    margin-bottom:20px;
-}
-
-/* ACADEMY */
-
-.academy{
-    background:#111;
-    border-radius:30px;
-    text-align:center;
-    padding:60px;
-    border:2px solid rgba(255,215,0,0.2);
-}
-
-.academy h2{
-    color:gold;
-    font-size:42px;
-    margin-bottom:20px;
-}
-
-.academy p{
-    color:#ddd;
-    line-height:1.9;
-    font-size:18px;
-}
-
-/* CONTACT */
-
-.contact{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:40px;
-}
-
-.contact-box{
-    background:#111;
-    padding:35px;
-    border-radius:25px;
-    border:1px solid rgba(255,215,0,0.2);
-}
-
-.contact-box h3{
-    color:gold;
-    margin-bottom:20px;
-    font-size:28px;
-}
-
-.contact-box p{
-    color:#ddd;
-    line-height:1.8;
-}
-
-/* FOOTER */
-
-footer{
-    background:#050505;
-    padding:30px;
-    text-align:center;
-    color:#bbb;
-    border-top:1px solid rgba(255,215,0,0.2);
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-nav{
-    padding:15px 5%;
-}
-
-nav ul{
-    display:none;
-}
-
-.hero-content h1{
-    font-size:45px;
-}
-
-.section-title h2{
-    font-size:35px;
-}
-
-.about-content h2{
-    font-size:35px;
-}
-
-}
-
-</style>
-</head>
-<body>
-
-<!-- NAVBAR -->
-
-<nav>
-
-<div class="logo">
+<!-- IS LINE KO REPLACE KARO -->
 <img src="sneha-beauty-logo.jpg" alt="Sneha Beauty Logo">
-<h2>Sneha Beauty</h2>
-</div>
 
-<ul>
-<li><a href="#">Home</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#gallery">Gallery</a></li>
-<li><a href="#academy">Academy</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
+<!-- ISSE -->
+<img src="https://github.com/h38331627-cloud/beautyparlour/blob/main/sneha%20beauty.jpg?raw=true" alt="Sneha Beauty Logo">
 
-</nav>
 
-<!-- HERO -->
+<!-- AUR YE TITLE CHANGE KARO -->
+
+<title>SNEHA BEAUTY STUDIO AND ACADEMY</title>
+
+
+<!-- HERO HEADING CHANGE -->
+
+<h1>SNEHA BEAUTY STUDIO <br> AND ACADEMY</h1>
+
+
+<!-- LOGO NAME CHANGE -->
+
+<h2>SNEHA BEAUTY</h2>
+
+
+
+<!-- FULL PREMIUM HERO SECTION -->
 
 <section class="hero">
 
 <div class="hero-content">
 
-<h1>Glow With Confidence & Beauty</h1>
+<h1>SNEHA BEAUTY STUDIO <br> AND ACADEMY</h1>
 
 <p>
-Welcome to Sneha Beauty Studio & Academy — your premium destination for
-bridal makeup, hairstyles, skincare, salon services, beauty cosmetics,
-spa therapy, massage, nail art, personal care and professional beauty training.
+Premium Beauty Salon & Certified Makeup Academy in Gorakhpur.
+Bridal Makeup, HD Makeup, Hair Styling, Nail Art, Facial,
+Spa, Massage, Cosmetics, Personal Care and Complete Beauty Solutions
+for Girls & Women.
 </p>
 
 <div class="hero-btns">
@@ -377,85 +47,24 @@ spa therapy, massage, nail art, personal care and professional beauty training.
 
 </section>
 
-<!-- SERVICES -->
 
-<section id="services">
 
-<div class="section-title">
-<h2>Our Premium Services</h2>
-<p>Luxury beauty and salon experience for girls & women</p>
-</div>
-
-<div class="services">
-
-<div class="service-box">
-<h3>Bridal Makeup</h3>
-<p>
-HD Bridal Makeup, Airbrush Makeup, Engagement Look,
-Reception Makeup and Premium Bridal Packages.
-</p>
-</div>
-
-<div class="service-box">
-<h3>Hair Styling</h3>
-<p>
-Modern Haircut, Smoothening, Keratin, Hair Spa,
-Hair Color and Trendy Hair Styling.
-</p>
-</div>
-
-<div class="service-box">
-<h3>Skin Care</h3>
-<p>
-Facial, Cleanup, Detan, Whitening Treatment,
-Glow Therapy and Personal Skin Care.
-</p>
-</div>
-
-<div class="service-box">
-<h3>Spa & Massage</h3>
-<p>
-Relaxing body massage, spa therapy and premium
-stress relief salon treatments.
-</p>
-</div>
-
-<div class="service-box">
-<h3>Nail Art</h3>
-<p>
-Luxury nail extensions, nail polish designs,
-gel nails and stylish nail art.
-</p>
-</div>
-
-<div class="service-box">
-<h3>Beauty Academy</h3>
-<p>
-Professional beauty courses with certified training
-at Lakme Academy standard.
-</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- GALLERY -->
+<!-- PREMIUM GALLERY SECTION -->
 
 <section id="gallery">
 
 <div class="section-title">
-<h2>Beauty Gallery</h2>
-<p>Premium salon vibes & gorgeous makeup looks</p>
+<h2>Luxury Beauty Experience</h2>
+<p>Professional salon environment with glamorous makeup looks</p>
 </div>
 
 <div class="gallery">
 
-<img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=1200&auto=format&fit=crop">
 
-<img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?q=80&w=1200&auto=format&fit=crop">
 
-<img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1200&auto=format&fit=crop">
 
 <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1200&auto=format&fit=crop">
 
@@ -463,70 +72,22 @@ at Lakme Academy standard.
 
 </section>
 
-<!-- ABOUT -->
 
-<section>
 
-<div class="about">
-
-<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop">
-
-<div class="about-content">
-
-<h2>About Sneha Beauty Studio</h2>
-
-<p>
-Sneha Beauty Studio & Academy is a premium beauty salon and makeup academy
-designed specially for girls and women who love elegance, style and beauty.
-</p>
-
-<p>
-From bridal makeover to advanced beauty care, our expert team provides
-luxury salon services with professional standards and modern beauty trends.
-</p>
-
-<p>
-We also provide beauty training programs inspired by certified Lakme Academy standards.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ACADEMY -->
-
-<section id="academy">
-
-<div class="academy">
-
-<h2>Certified Beauty Academy</h2>
-
-<p>
-Learn professional makeup artistry, hair styling, nail art,
-skin treatment and salon management with advanced beauty courses.
-Perfect for girls who want to build a successful career in beauty industry.
-</p>
-
-</div>
-
-</section>
-
-<!-- CONTACT -->
+<!-- CONTACT SECTION -->
 
 <section id="contact">
 
 <div class="section-title">
-<h2>Contact Us</h2>
-<p>Visit our premium beauty studio today</p>
+<h2>Visit Our Studio</h2>
+<p>Luxury beauty destination in Gorakhpur</p>
 </div>
 
 <div class="contact">
 
 <div class="contact-box">
 
-<h3>Address</h3>
+<h3>Studio Address</h3>
 
 <p>
 Pakwa Chauraha Near Singh Vahini School,<br>
@@ -537,22 +98,22 @@ Gorakhpur, Uttar Pradesh
 
 <div class="contact-box">
 
-<h3>Opening Hours</h3>
+<h3>Certified Academy</h3>
 
 <p>
-Monday - Sunday<br>
-10:00 AM - 8:00 PM
+Professional Beauty Training Inspired by<br>
+Lakme Academy Standards
 </p>
 
 </div>
 
 <div class="contact-box">
 
-<h3>Book Appointment</h3>
+<h3>Beauty Appointments</h3>
 
 <p>
-Call / WhatsApp:<br>
-+91 XXXXX XXXXX
+Bridal Makeup • Hair Styling • Spa • Facial<br>
+Call / WhatsApp : +91 XXXXX XXXXX
 </p>
 
 </div>
@@ -560,16 +121,3 @@ Call / WhatsApp:<br>
 </div>
 
 </section>
-
-<!-- FOOTER -->
-
-<footer>
-
-<p>
-© 2026 Sneha Beauty Studio & Academy | Designed with Premium Luxury Style
-</p>
-
-</footer>
-
-</body>
-</html>
