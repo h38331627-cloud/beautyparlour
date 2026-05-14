@@ -1,193 +1,575 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sneha Beauty Studio & Academy</title>
 
-<title>RAHUL TOSS FIXER</title>
-
-<!-- META PIXEL -->
-<script>
-!function(f,b,e,v,n,t,s){
-if(f.fbq)return;n=f.fbq=function(){
-n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)
-}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-
-fbq('init', '1265282839024084');
-fbq('track', 'PageView');
-fbq('track', 'ViewContent');
-</script>
-
-<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
 body{
-margin:0;
-font-family:sans-serif;
-background:linear-gradient(to bottom,#020617,#0f172a);
-color:white;
+    background:#000;
+    color:#fff;
+    overflow-x:hidden;
 }
 
-/* FULL SCREEN */
-.main{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:space-between;
-padding:20px;
+html{
+    scroll-behavior:smooth;
 }
 
-/* TITLE */
-.title{
-font-size:28px;
-font-weight:900;
-color:#facc15;
-text-align:center;
+/* NAVBAR */
+
+nav{
+    width:100%;
+    padding:18px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    top:0;
+    z-index:999;
+    background:rgba(0,0,0,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,215,0,0.2);
 }
 
-/* CARD */
-.card{
-background:#111827;
-padding:20px;
-border-radius:16px;
-text-align:center;
-margin-top:15px;
-box-shadow:0 10px 25px rgba(0,0,0,0.5);
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
 
-/* BUTTON */
+.logo img{
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    border:2px solid gold;
+    object-fit:cover;
+}
+
+.logo h2{
+    color:gold;
+    font-size:24px;
+}
+
+nav ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+    font-weight:500;
+}
+
+nav ul li a:hover{
+    color:gold;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:120px 8% 60px;
+    background:
+    linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.85)),
+    url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=1600&auto=format&fit=crop') center/cover;
+}
+
+.hero-content{
+    max-width:700px;
+}
+
+.hero-content h1{
+    font-size:68px;
+    line-height:1.1;
+    color:gold;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:18px;
+    color:#ddd;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.hero-btns{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
 .btn{
-display:block;
-width:100%;
-padding:16px;
-border-radius:12px;
-font-weight:bold;
-text-align:center;
-margin-top:15px;
-transition:0.2s;
+    padding:15px 35px;
+    border:none;
+    border-radius:40px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.4s;
+    text-decoration:none;
 }
 
-.btn1{ background:#22c55e; }
-.btn2{ background:#2563eb; }
-
-.btn:hover{
-transform:scale(1.05);
+.btn-gold{
+    background:gold;
+    color:black;
 }
 
-/* BADGE */
-.badge{
-background:#ef4444;
-padding:5px 10px;
-border-radius:20px;
-font-size:12px;
-display:inline-block;
-margin-top:8px;
+.btn-gold:hover{
+    background:white;
+    transform:translateY(-5px);
 }
 
-/* DISCLAIMER */
-.disclaimer{
-font-size:11px;
-color:#9ca3af;
-text-align:center;
-margin-top:15px;
-line-height:1.4;
+.btn-outline{
+    border:2px solid gold;
+    color:gold;
 }
+
+.btn-outline:hover{
+    background:gold;
+    color:black;
+}
+
+/* SERVICES */
+
+section{
+    padding:90px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:45px;
+    color:gold;
+    margin-bottom:15px;
+}
+
+.section-title p{
+    color:#ccc;
+}
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.service-box{
+    background:#111;
+    padding:35px;
+    border-radius:25px;
+    transition:0.4s;
+    border:1px solid rgba(255,215,0,0.2);
+}
+
+.service-box:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px rgba(255,215,0,0.3);
+}
+
+.service-box h3{
+    color:gold;
+    margin-bottom:15px;
+    font-size:24px;
+}
+
+.service-box p{
+    color:#ddd;
+    line-height:1.7;
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.gallery img{
+    width:100%;
+    height:380px;
+    object-fit:cover;
+    border-radius:25px;
+    transition:0.4s;
+    border:2px solid rgba(255,215,0,0.2);
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+    box-shadow:0 0 30px rgba(255,215,0,0.4);
+}
+
+/* ABOUT */
+
+.about{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    align-items:center;
+    gap:50px;
+}
+
+.about img{
+    width:100%;
+    border-radius:30px;
+    border:3px solid gold;
+}
+
+.about-content h2{
+    font-size:45px;
+    color:gold;
+    margin-bottom:20px;
+}
+
+.about-content p{
+    line-height:1.9;
+    color:#ddd;
+    margin-bottom:20px;
+}
+
+/* ACADEMY */
+
+.academy{
+    background:#111;
+    border-radius:30px;
+    text-align:center;
+    padding:60px;
+    border:2px solid rgba(255,215,0,0.2);
+}
+
+.academy h2{
+    color:gold;
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.academy p{
+    color:#ddd;
+    line-height:1.9;
+    font-size:18px;
+}
+
+/* CONTACT */
+
+.contact{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:40px;
+}
+
+.contact-box{
+    background:#111;
+    padding:35px;
+    border-radius:25px;
+    border:1px solid rgba(255,215,0,0.2);
+}
+
+.contact-box h3{
+    color:gold;
+    margin-bottom:20px;
+    font-size:28px;
+}
+
+.contact-box p{
+    color:#ddd;
+    line-height:1.8;
+}
+
+/* FOOTER */
+
+footer{
+    background:#050505;
+    padding:30px;
+    text-align:center;
+    color:#bbb;
+    border-top:1px solid rgba(255,215,0,0.2);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+nav{
+    padding:15px 5%;
+}
+
+nav ul{
+    display:none;
+}
+
+.hero-content h1{
+    font-size:45px;
+}
+
+.section-title h2{
+    font-size:35px;
+}
+
+.about-content h2{
+    font-size:35px;
+}
+
+}
+
 </style>
-
 </head>
-
 <body>
 
-<div class="main">
+<!-- NAVBAR -->
 
-<!-- TOP -->
-<div>
-<h1 class="title">RAHUL TOSS FIXER</h1>
+<nav>
 
-<div class="text-center mt-2">
-<span class="badge">🔥 LIMITED ACCESS</span>
+<div class="logo">
+<img src="sneha-beauty-logo.jpg" alt="Sneha Beauty Logo">
+<h2>Sneha Beauty</h2>
 </div>
 
-<div class="text-center mt-3 text-lg">
-⏳ Join Fast: <span id="countdown" class="text-yellow-300 font-bold">30</span>s
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#academy">Academy</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Glow With Confidence & Beauty</h1>
+
+<p>
+Welcome to Sneha Beauty Studio & Academy — your premium destination for
+bridal makeup, hairstyles, skincare, salon services, beauty cosmetics,
+spa therapy, massage, nail art, personal care and professional beauty training.
+</p>
+
+<div class="hero-btns">
+<a href="#services" class="btn btn-gold">Explore Services</a>
+<a href="#contact" class="btn btn-outline">Book Appointment</a>
 </div>
 
-<div class="card">
-<p class="text-lg font-semibold">📢 Daily Toss Updates</p>
-<p class="text-sm mt-2">High Accuracy • Instant Access 👇</p>
-</div>
 </div>
 
-<!-- BUTTONS -->
-<div>
+</section>
 
-<a href="https://t.me/+BZMHSu-IhjFlZjll" id="btn1">
-<div class="btn btn1">JOIN NOW 🚀</div>
-</a>
+<!-- SERVICES -->
 
-<a href="https://t.me/+BZMHSu-IhjFlZjll" id="btn2">
-<div class="btn btn2">GET ACCESS ⚡</div>
-</a>
+<section id="services">
 
-<p class="disclaimer">
-⚠️ This page is for informational purposes only.  
-We do not guarantee any results, profits, or accuracy.  
-Users should act at their own discretion.  
-This page follows advertising guidelines and avoids misleading claims.
+<div class="section-title">
+<h2>Our Premium Services</h2>
+<p>Luxury beauty and salon experience for girls & women</p>
+</div>
+
+<div class="services">
+
+<div class="service-box">
+<h3>Bridal Makeup</h3>
+<p>
+HD Bridal Makeup, Airbrush Makeup, Engagement Look,
+Reception Makeup and Premium Bridal Packages.
+</p>
+</div>
+
+<div class="service-box">
+<h3>Hair Styling</h3>
+<p>
+Modern Haircut, Smoothening, Keratin, Hair Spa,
+Hair Color and Trendy Hair Styling.
+</p>
+</div>
+
+<div class="service-box">
+<h3>Skin Care</h3>
+<p>
+Facial, Cleanup, Detan, Whitening Treatment,
+Glow Therapy and Personal Skin Care.
+</p>
+</div>
+
+<div class="service-box">
+<h3>Spa & Massage</h3>
+<p>
+Relaxing body massage, spa therapy and premium
+stress relief salon treatments.
+</p>
+</div>
+
+<div class="service-box">
+<h3>Nail Art</h3>
+<p>
+Luxury nail extensions, nail polish designs,
+gel nails and stylish nail art.
+</p>
+</div>
+
+<div class="service-box">
+<h3>Beauty Academy</h3>
+<p>
+Professional beauty courses with certified training
+at Lakme Academy standard.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section id="gallery">
+
+<div class="section-title">
+<h2>Beauty Gallery</h2>
+<p>Premium salon vibes & gorgeous makeup looks</p>
+</div>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1200&auto=format&fit=crop">
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section>
+
+<div class="about">
+
+<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop">
+
+<div class="about-content">
+
+<h2>About Sneha Beauty Studio</h2>
+
+<p>
+Sneha Beauty Studio & Academy is a premium beauty salon and makeup academy
+designed specially for girls and women who love elegance, style and beauty.
+</p>
+
+<p>
+From bridal makeover to advanced beauty care, our expert team provides
+luxury salon services with professional standards and modern beauty trends.
+</p>
+
+<p>
+We also provide beauty training programs inspired by certified Lakme Academy standards.
 </p>
 
 </div>
 
 </div>
 
-<script>
+</section>
 
-let timeLeft = 30;
-let leadTracked = false;
+<!-- ACADEMY -->
 
-const countdown = document.getElementById("countdown");
+<section id="academy">
 
-const timer = setInterval(() => {
-timeLeft--;
-countdown.innerText = timeLeft;
+<div class="academy">
 
-if(timeLeft === 5 && !leadTracked){
-   fbq('track', 'Lead', {
-     content_name: 'Telegram Join',
-     value: 1,
-     currency: 'INR'
-   });
-   leadTracked = true;
-}
+<h2>Certified Beauty Academy</h2>
 
-if(timeLeft < 0){
-clearInterval(timer);
-window.location.href = "https://t.me/+BZMHSu-IhjFlZjll";
-}
-},1000);
+<p>
+Learn professional makeup artistry, hair styling, nail art,
+skin treatment and salon management with advanced beauty courses.
+Perfect for girls who want to build a successful career in beauty industry.
+</p>
 
-/* TRACKING */
-function trackLead(){
-if(!leadTracked){
-fbq('track', 'Lead', {
-  content_name: 'Telegram Join',
-  value: 1,
-  currency: 'INR'
-});
-leadTracked = true;
-}
-}
+</div>
 
-document.getElementById("btn1").onclick = trackLead;
-document.getElementById("btn2").onclick = trackLead;
+</section>
 
-</script>
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="section-title">
+<h2>Contact Us</h2>
+<p>Visit our premium beauty studio today</p>
+</div>
+
+<div class="contact">
+
+<div class="contact-box">
+
+<h3>Address</h3>
+
+<p>
+Pakwa Chauraha Near Singh Vahini School,<br>
+Gorakhpur, Uttar Pradesh
+</p>
+
+</div>
+
+<div class="contact-box">
+
+<h3>Opening Hours</h3>
+
+<p>
+Monday - Sunday<br>
+10:00 AM - 8:00 PM
+</p>
+
+</div>
+
+<div class="contact-box">
+
+<h3>Book Appointment</h3>
+
+<p>
+Call / WhatsApp:<br>
++91 XXXXX XXXXX
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 Sneha Beauty Studio & Academy | Designed with Premium Luxury Style
+</p>
+
+</footer>
 
 </body>
 </html>
